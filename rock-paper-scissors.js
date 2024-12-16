@@ -1,7 +1,20 @@
 "use strict";
 
 function playGame() {
-  let humanSelection, computerSelection;
+  // let humanSelection, computerSelection;
+  let computerSelection = getComputerSelection();
+  let rock = document.querySelector(".btn-rock");
+  rock.addEventListener("click", () => {
+    playRound("rock", computerSelection);
+  });
+  let paper = document.querySelector(".btn-paper");
+  paper.addEventListener("click", () => {
+    playRound("paper", computerSelection);
+  })
+  let scissor = document.querySelector(".btn-scissor")
+  scissor.addEventListener("click", () => {
+    playRound("scissor", computerSelection)
+  }) 
   
   function getHumanSelection() {
     // const prompt = require('prompt-sync')();
@@ -38,13 +51,13 @@ function playGame() {
       computer_score++; 
     }else if (humanChoice === "paper" && computerChoice === "rock") {
       console.log("You Win! Paper beats Rock.")
-      computer_score++;
+      human_score++;
     } else if (humanChoice === "scissor" && computerChoice === "paper") {
       console.log("You Win! Scissor beats Paper.")
-      computer_score++;
+      human_score++;
     } else if (humanChoice === "rock" && computerChoice === "scissor") { 
       console.log("You Win! Rock beats Scissor.")
-      computer_score++;
+      human_score++;
     } else {  
       console.log("Invalid Input!")
     }
@@ -53,11 +66,11 @@ function playGame() {
     return [human_score, computer_score, ties];
   }
 
-  for (let round = 1; round <= 5; round++) {
-    humanSelection = getHumanSelection()
-    computerSelection = getComputerSelection()
-    playRound(humanSelection, computerSelection);
-  }
+  // for (let round = 1; round <= 5; round++) {
+  //   humanSelection = getHumanSelection()
+  //   computerSelection = getComputerSelection()
+  //   playRound(humanSelection, computerSelection);
+  // }
 }
 
 playGame()

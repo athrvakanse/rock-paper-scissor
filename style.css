@@ -1,0 +1,25 @@
+body {
+    background-color: #778da9;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    padding: .5rem;
+    box-sizing: border-box;
+}
+
+.options .btn {
+    font-size: 32px;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-weight: 900;
+    margin: 0 .5rem 0 .5rem;
+}
